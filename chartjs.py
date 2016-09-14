@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     con = sqlite3.connect("data.db", isolation_level='DEFERRED')
     cur = con.cursor()
-    cur.execute('SELECT * FROM co2 ORDER BY created_at desc LIMIT 0, 40;')
+    cur.execute('SELECT * FROM co2 ORDER BY id desc LIMIT 0, 40;')
     data = cur.fetchall()
     con.commit()
     con.close()
